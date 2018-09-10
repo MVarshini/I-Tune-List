@@ -1,0 +1,45 @@
+<ngx-spinner
+bdColor = "rgba(4,3,3,0.8)"
+size = "large"
+color = "#2a54c5"
+type = "square-jelly-box"
+></ngx-spinner>
+<div class="itine-container" *ngIf="data == '{}'; else songList">
+  no data
+</div>
+<ng-template #songList>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="col-xs-12 col-md-12">
+          <h2 class=" chart-heading">{{data?.feed?.title?.label}}</h2>
+        <div class="row feed-item" *ngFor="let item of data?.feed?.entry;let index = index">
+          <div class="col-xs-6 col-md-4">
+            <p class="item-position"> {{index+1}}</p>
+            <div class="item-image text-center" lazy-load-images>
+              <img defaultImage="{{defaultImg}}" lazyLoad="{{item['im:image'][2].label}}" [offset]="100">
+            </div>
+          </div>
+          <div class="col-md-8 col-xs-6">
+            <div class="item-details text-center">
+              <div class="item-title font-weight-bold">{{item['im:name'].label}}</div>
+              <div class="item-artist mb-3 ">{{item['im:artist'].label}}</div>
+              <div class="item-tracks ">
+                <span class="font-weight-bold">Tracks: </span>
+                <span class="count">{{item['im:itemCount'].label}}</span>
+              </div>
+              <div class="item-genre ">
+                <span class="font-weight-bold">Genre: </span>
+                <span class="genre-type">{{item.category.attributes.label}}</span>
+              </div>
+              <div class="item-releaseDate ">
+                <span class="font-weight-bold">Release Date: </span>
+                <span class="date">{{item['im:releaseDate'].label | date: 'dd/MM/yyyy'}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+</ng-template>

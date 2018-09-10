@@ -1,0 +1,39 @@
+.chart-heading
+{
+    border-bottom: 1px solid #069;
+    padding-bottom: 5px;
+    color: #036;
+    font-size: 18px;
+}
+div.feed-item {
+    border-bottom: 1px groove #069;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 20px;
+}
+div.feed-item:last-child {
+    border-bottom: none;   
+}
+.item-title {
+    font-size: 20px;
+}
+.item-image img {
+    max-height : 100%;
+    max-width: 100%;
+}
+.item-artist {
+    font-style: italic;
+}
+p.item-position {
+    font-size: 24px!important;
+    background: #afa9e2;
+    padding: 2px 11px;
+    margin-right: 10px;
+    border-radius: 4px;
+    box-shadow: inset 1px 1px 15px 1px #7075b9, inset -1px -1px 15px 1px #9d8ac3;
+    text-shadow: rgba(27, 19, 64, 0.4) 0 1px 0;
+    color: #290eb9;
+    font-weight: 700;
+    position: absolute;
+    top: -10px;
+}
